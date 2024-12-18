@@ -30,16 +30,18 @@ a {
 
 /* Header Positioned at the Top */
 .header {
-    position: absolute;
-    top: 0;
+    position: absolute; /* Keeps it above the hero content */
+    top: 0; /* Aligns it to the top */
     left: 0;
-    width: 100%;
-    padding: 20px 40px;
+    width: 100%; /* Full width */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
+    padding: 10px 20px; /* Spacing around nav */
+    z-index: 10; /* Ensures it stays above hero content */
+    background: transparent; /* Transparent to avoid blocking content */
 }
+
 
 .header .logo {
     font-size: 22px;
@@ -71,14 +73,16 @@ a {
 }
 
 .social-icon {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
+    width: 30px; /* Increase width */
+    height: 30px; /* Increase height */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effects */
 }
 
 .social-icon:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); /* Slight enlargement on hover */
+    opacity: 0.8; /* Add a hover effect */
 }
+
 
 .btn-primary {
     background: rgb(9, 49, 119);
@@ -94,15 +98,16 @@ a {
     transform: scale(1.05);
 }
 
-/* Hero Content */
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+.hero-content {
+    margin-top: 80px; /* Adjust spacing to avoid overlap with navigation */
+    padding: 20px; /* Add internal spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px; /* Space between elements */
 }
+
 
 .hero-content p {
     font-size: 1.5rem;
@@ -401,7 +406,7 @@ html {
 .btn-primary {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #c0392b; /* Red button color */
+    background-color: #062b5e; /* Red button color */
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -612,6 +617,231 @@ html {
 
     .footer-column {
         margin-bottom: 15px;
+    }
+}
+/* Small Phone Styling (max-width: 480px) */
+@media (max-width: 480px) {
+    /* General Body Adjustments */
+    body {
+        font-size: 14px; /* Smaller font size for readability */
+    }
+
+    /* Navigation Bar Adjustments */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px; /* Add spacing between links */
+    }
+
+    .nav .nav-link, 
+    .btn-primary {
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    /* Hero Section Adjustments */
+    .hero {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Smaller heading */
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Reduce paragraph size */
+    }
+
+    .buttons .btn {
+        padding: 10px 15px; /* Smaller buttons */
+        font-size: 0.8rem;
+    }
+
+    /* Section Adjustments (e.g., Our Vision, Join Us) */
+    section {
+        padding: 20px 10px; /* Less padding for smaller screens */
+    }
+
+    .vision-content, 
+    .join-container, 
+    .opportunities-container {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+        gap: 15px; /* Add spacing */
+    }
+
+    .vision-item, .join-text, .opportunities-text {
+        max-width: 100%; /* Full width for small screens */
+        margin: 0 auto;
+    }
+
+    .flyer-image, .join-image img {
+        max-width: 100%; /* Ensure images scale properly */
+        height: auto;
+    }
+
+    /* Footer Adjustments */
+    .footer-container {
+        flex-direction: column; /* Stack columns vertically */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-column {
+        margin-bottom: 15px;
+    }
+
+    /* Reduce font size for footer text */
+    .footer-title, .footer-subtitle {
+        font-size: 1rem;
+    }
+
+    .footer-list li {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem; /* Smaller font size for mobile */
+        line-height: 1.2;  /* Adjust line spacing for better fit */
+    }
+}
+.hero-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center-align text */
+    gap: 15px; /* Add space between elements */
+    padding: 20px; /* Add padding to prevent overlap */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem; /* Adjust font size */
+    line-height: 1.3;  /* Adjust spacing between lines */
+    margin-bottom: 10px; /* Add space below heading */
+}
+
+.hero-content p {
+    font-size: 1rem; /* Smaller text for mobile */
+    margin-bottom: 15px; /* Add spacing below paragraph */
+}
+
+.buttons {
+    margin-top: 20px; /* Space above buttons */
+}
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 10px; /* Reduce padding */
+        gap: 10px; /* Reduce gap between elements */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Shrink heading for mobile */
+        line-height: 1.2;  /* Tighten spacing */
+    }
+
+    .hero-content p {
+        font-size: 0.9rem; /* Shrink paragraph text */
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Space between buttons */
+    }
+
+    .buttons .btn {
+        width: 100%; /* Full-width buttons for mobile */
+    }
+}
+@media (max-width: 480px) {
+    .nav .nav-link {
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    .social-icon {
+        width: 15px; /* Shrink Instagram logo */
+        height: 15px;
+    }
+
+    .hero-content {
+        margin-top: 100px; /* More space for navigation */
+    }
+}
+.nav {
+    display: flex;
+    justify-content: center; /* Align links in the center */
+    gap: 20px; /* Space between links */
+}
+
+.nav .nav-link,
+.nav .social-icon {
+    margin: 0; /* Remove any extra margins */
+    padding: 5px; /* Add some padding for better spacing */
+}
+@media (max-width: 480px) {
+    .social-icon {
+        width: 40px; /* Larger size for mobile */
+        height: 40px; /* Maintain proportions */
+    }
+}
+@media (max-width: 480px) {
+    .social-icon {
+        width: 30px; /* Slightly smaller size */
+        height: 30px; /* Maintain proportions */
+    }
+}
+@media (max-width: 480px) {
+    .nav {
+        display: flex; /* Ensure flexbox is used */
+        justify-content: center; /* Center-align the items */
+        align-items: center; /* Vertically center the items */
+        gap: 20px; /* Add spacing between items */
+        flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+    }
+
+    .nav .nav-link {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        white-space: nowrap; /* Prevent text from breaking onto multiple lines */
+    }
+
+    .social-icon {
+        width: 25px; /* Slightly smaller size for balance */
+        height: 25px;
+    }
+}
+@media (max-width: 480px) {
+    .header {
+        display: flex; /* Use flexbox for alignment */
+        justify-content: center; /* Center-align the navigation */
+        align-items: center; /* Vertically center */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .nav {
+        display: flex; /* Flexbox layout */
+        flex-direction: row; /* Ensure items are in a row */
+        justify-content: space-between; /* Distribute items evenly */
+        align-items: center; /* Vertically center items */
+        width: 100%; /* Take up the full width */
+        padding: 0 10px; /* Add space on the left and right */
+        gap: 10px; /* Spacing between items */
+    }
+
+    .nav .nav-link {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        white-space: nowrap; /* Prevent text from wrapping */
+    }
+
+    .social-icon {
+        width: 25px; /* Adjust size for mobile */
+        height: 25px;
     }
 }
 
